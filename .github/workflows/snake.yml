@@ -12,15 +12,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Generate GitHub contribution snake
+      - name: Generate GitHub contribution snake (light and dark mode)
         uses: Platane/snk@v3
         with:
           github_user_name: calebjcarlson
-          outputs: dist/github-contribution-grid-snake.svg
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
       - name: Commit and push the generated snake
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          publish_branch: output
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b output || git checkout output
+          git add dist/github-contribution-grid-snake.svg
+          git add dist/github-contribution-grid-snake-dark.svg
+          git commit -m "Generate snake animation (light and dark mode)"
+          git push -f https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/calebjcarlson/calebjcarlson.git output
