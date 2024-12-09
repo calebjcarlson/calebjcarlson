@@ -12,13 +12,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Generate GitHub contribution snake (light and dark mode)
+      - name: Generate GitHub contribution snake (light mode)
         uses: Platane/snk@v3
         with:
           github_user_name: calebjcarlson
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          outputs: dist/github-contribution-grid-snake.svg
+
+      - name: Generate GitHub contribution snake (dark mode)
+        uses: Platane/snk@v3
+        with:
+          github_user_name: calebjcarlson
+          outputs: dist/github-contribution-grid-snake-dark.svg
+          palette: github-dark
 
       - name: Commit and push the generated snake
         run: |
