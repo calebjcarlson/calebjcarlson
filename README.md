@@ -1,6 +1,8 @@
 ## Hi there 👋
-![GitHub Snake Animation](https://github.com/calebjcarlson/calebjcarlson/blob/output/github-contribution-grid-snake.svg)
-
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/calebjcarlson/calebjcarlson/blob/output/github-contribution-grid-snake-dark.svg">
+  <img src="https://github.com/calebjcarlson/calebjcarlson/blob/output/github-contribution-grid-snake.svg" alt="GitHub Snake Animation">
+</picture>
 
 
 <!--
