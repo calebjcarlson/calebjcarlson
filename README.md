@@ -1,5 +1,6 @@
 ## Hi there 👋
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=calebjcarlson&theme=react-dark)
+![GitHub Snake Animation](https://github.com/calebjcarlson/calebjcarlson/blob/output/github-contribution-grid-snake.svg)
+
 
 <!--
 **calebjcarlson/calebjcarlson** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
