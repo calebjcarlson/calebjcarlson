@@ -3,7 +3,7 @@ name: Generate Snake Animation
 on:
   schedule:
     - cron: "0 0 * * *"  # Runs every day at midnight
-  workflow_dispatch:      # Allows manual triggering of the workflow
+  workflow_dispatch:
 
 jobs:
   generate:
@@ -18,14 +18,14 @@ jobs:
           github_user_name: calebjcarlson
           outputs: dist/github-contribution-grid-snake.svg
 
-      - name: Generate GitHub contribution snake (dark mode)
-        uses: Platane/snk@v3
-        with:
-          github_user_name: calebjcarlson
-          outputs: dist/github-contribution-grid-snake-dark.svg
-          palette: github-dark
+      - name: Create dark mode version
+        run: |
+          cp dist/github-contribution-grid-snake.svg dist/github-contribution-grid-snake-dark.svg
+          sed -i 's/#eeeeee/#1f1f1f/g' dist/github-contribution-grid-snake-dark.svg  # Background color
+          sed -i 's/#888888/#dddddd/g' dist/github-contribution-grid-snake-dark.svg  # Grid color
+          sed -i 's/#000000/#ffffff/g' dist/github-contribution-grid-snake-dark.svg  # Snake color
 
-      - name: Commit and push the generated snake
+      - name: Commit and push the generated snakes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
