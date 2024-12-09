@@ -16,12 +16,11 @@ jobs:
         uses: Platane/snk@v3
         with:
           github_user_name: calebjcarlson
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          outputs: dist/github-contribution-grid-snake.svg
 
-      - name: Push the generated snake
-        uses: actions/upload-artifact@v3
+      - name: Commit and push the generated snake
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: snake-animation
-          path: dist/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
