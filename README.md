@@ -1,6 +1,6 @@
 ## Hi there 👋
 ![GitHub Snake Animation](https://github.com/calebjcarlson/calebjcarlson/blob/output/github-contribution-grid-snake.svg)
-![GitHub Snake Animation](https://github.com/calebjcarlson/calebjcarlson/blob/output/github-contribution-grid-snake-dark.svg?palette=github-dark)
+
 
 
 <!--
